@@ -3,19 +3,19 @@
 <html>
 	<head>
 		<title>Service-ding.de</title>
-		<meta charset="UTF-8" />
-		<meta name="format-detection" content="telephone=no" />
-		<link rel="icon" type="image/svg+xml" href="img/fav.svg" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta charset="UTF-8">
+		<meta name="format-detection" content="telephone=no">
+		<link rel="icon" type="image/svg+xml" href="img/fav.svg">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="preload" href="fonts/poppins-regular.ttf" as="font" type="font/ttf"
 			crossorigin="anonymous">
-		<link rel="preload" href="img/hero-bg.png" as="image" />
+		<link rel="preload" href="img/hero-bg.png" as="image">
 		<link
 			rel="preload"
 			href="fonts/roboto-regular.ttf"
 			as="font"
 			type="font/ttf"
-			crossorigin="anonymous" />
+			crossorigin="anonymous">
 		<style>
       .wrapper {
         width: 100%;
@@ -29,273 +29,12 @@
         color: #1e1e1e;
         font-size: 16px;
       }
-
-      .hero__title {
-        text-align: center;
-        color: white;
-        line-height: 140%;
-        margin-top: 20px;
-        font-size: 40px;
-        font-family: "Roboto", sans-serif;
-        font-weight: 400;
-        @media (max-width: 1200px) {
-          font-size: 30px;
-        }
-        @media (max-width: 991.98px) {
-          font-size: 25px;
-        }
-      }
-
-      .header {
-        background-color: transparent;
-        height: 90px;
-        display: flex;
-        transition: 0.4s ease all;
-        position: relative;
-        z-index: 4;
-        align-items: center;
-        position: fixed;
-        width: 100%;
-        top: 0;
-        left: 0;
-      }
-      @media (max-width: 767.98px) {
-        .header {
-          height: 80px;
-        }
-      }
-      @media (max-width: 479.98px) {
-        .header {
-          height: 70px;
-        }
-      }
-      .header__logo {
-        display: flex;
-        align-items: center;
-        font-family: "Roboto", sans-serif;
-        font-weight: 700;
-        font-size: 20px;
-        color: white;
-        transition: 0.4s ease all;
-        gap: 13px;
-      }
-      @media (max-width: 991.98px) {
-        .header__logo {
-          font-size: 16px;
-          gap: 10px;
-        }
-      }
-      @media (max-width: 479.98px) {
-        .header__logo {
-          font-size: 14px;
-          gap: 5px;
-        }
-      }
-      .header__logo img {
-        max-width: 62px;
-        height: auto;
-        transition: 0.4s ease all;
-      }
-      @media (max-width: 991.98px) {
-        .header__logo img {
-          max-width: 45px;
-        }
-      }
-      @media (max-width: 479.98px) {
-        .header__logo img {
-          max-width: 40px;
-        }
-      }
-      .header__content {
-        display: grid;
-        grid-template-columns: 1fr auto 1fr;
-        align-items: center;
-      }
-      @media (max-width: 767.98px) {
-        .header__content {
-          display: flex;
-          justify-content: space-between;
-        }
-      }
-      .header__menu {
-        font-family: "Poppins", sans-serif;
-        font-weight: 500;
-        font-size: 16px;
-        display: flex;
-        align-items: center;
-        gap: 50px;
-        transition: 0.4s ease all;
-      }
-      @media (max-width: 991.98px) {
-        .header__menu {
-          gap: 20px;
-          font-size: 14px;
-        }
-      }
-      @media (max-width: 767.98px) {
-        .header__menu {
-          display: none;
-        }
-      }
-      .header__mobile-menu {
-        display: none;
-      }
-      @media (max-width: 767.98px) {
-        .header__mobile-menu {
-          display: block;
-          z-index: 11;
-          transform: translateX(100%);
-          position: fixed;
-          right: 0;
-          height: 100%;
-          width: 400px;
-          transition: 0.5s ease all;
-          text-align: center;
-          top: 0;
-          background-color: white;
-        }
-        .header__mobile-menu a {
-          display: block;
-          font-size: 20px;
-          line-height: 130%;
-          font-weight: 600;
-          padding: 15px;
-          color: black;
-        }
-      }
-      @media (max-width: 479.98px) {
-        .header__mobile-menu {
-          max-width: 100%;
-        }
-      }
-      .header__link {
-        color: white;
-        transition: 0.4s ease all;
-        font-weight: 500;
-        font-family: "Poppins", sans-serif;
-      }
-      @media (hover: hover) {
-        .header__link:hover {
-          color: #e88a25 !important;
-        }
-      }
-      .header__buttons {
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-      }
-      @media (max-width: 767.98px) {
-        .header__buttons {
-          gap: 15px;
-        }
-      }
-      @media (max-width: 479.98px) {
-        .header__buttons {
-          gap: 10px;
-        }
-      }
-      .header__icon-menu {
-        display: none;
-      }
-      @media (max-width: 767.98px) {
-        .header__icon-menu {
-          display: block;
-          cursor: pointer;
-          width: 20px;
-          height: 16px;
-          flex-direction: column;
-          display: flex;
-          justify-content: space-between;
-        }
-        .header__icon-menu span {
-          width: 100%;
-          display: block;
-          height: 2px;
-          background-color: white;
-          transition: 0.4s ease all;
-        }
-      }
-      .header__cross {
-        display: none;
-      }
-      @media (max-width: 767.98px) {
-        .header__cross {
-          display: flex;
-          justify-content: flex-end;
-          height: 80px;
-          padding-right: 20px;
-          align-items: center;
-        }
-      }
-      .header__button {
-        padding: 15px 21px;
-        background-color: #e88a25;
-        border: 1px solid transparent;
-        display: flex;
-        align-items: center;
-        gap: 15px;
-        transition: 0.4s ease all;
-        cursor: pointer;
-        font-family: "Poppins", sans-serif;
-        font-weight: 500;
-        color: white;
-        border-radius: 5px;
-      }
-      .header__button svg path {
-        transition: 0.4s ease all;
-      }
-      @media (hover: hover) {
-        .header__button:hover {
-          color: #e88a25;
-          background-color: white;
-        }
-        .header__button:hover svg path {
-          fill: #e88a25;
-        }
-      }
-      @media (max-width: 991.98px) {
-        .header__button {
-          font-size: 14px;
-          padding: 13px 15px;
-          gap: 10px;
-        }
-      }
-      @media (max-width: 479.98px) {
-        .header__button {
-          gap: 8px;
-          padding: 12px 10px;
-        }
-      }
-      .header__white {
-        background-color: white;
-      }
-      .header__white .header__button {
-        border-color: #e88a25;
-      }
-      .header__white .header__menu {
-        color: black;
-      }
-      .header__white .header__menu a {
-        color: black;
-      }
-      .header__white .header__logo {
-        color: black;
-      }
-      .header__white .header__logo img {
-        filter: invert(1);
-      }
-      .header__white .header__icon-menu span {
-        background-color: black;
-      }
-      .header__mobile-menu.active {
-        transform: translateX(0);
-      }
     </style>
 		<link
 			rel="stylesheet"
-			href="css/style.min.css?v=1.0.1"
+			href="css/style.min.css?v=1.0.2"
 			media="print"
-			onload="this.media='all'" />
+			onload="this.media='all'">
 	</head>
 	<body></body>
 </html>
@@ -306,7 +45,7 @@
     <div class="container">
       <div class="header__content">
         <div class="header__logo">
-          <img src="img/logo.svg" alt="Service-ding.de">
+          <svg width="62" height="51" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_312_2191)" fill="#fff"><path d="M53.158 50.859v.08c-.381.02-.753.05-1.135.05h-9.796c-.271 0-.392-.11-.482-.33-.723-1.682-1.457-3.355-2.19-5.036-.844-1.943-1.688-3.895-2.522-5.847-.14-.32-.281-.641-.432-.952a.668.668 0 00-.251-.25L28 33.408c-1.366-.84-2.722-1.702-4.078-2.553-.03-.02-.08-.03-.221-.07.633.781 1.205 1.492 1.818 2.253-4.43 1.852-8.811 3.694-13.232 5.546-.12-.34-.24-.65-.341-.97l-1.085-3.425c-.463-1.482-.925-2.973-1.387-4.455a87.387 87.387 0 00-.753-2.293c-.04-.13-.302-.39-.674-.5-.391-.13-.693-.23-.994-.34-1.477-.552-2.944-1.102-4.421-1.643-.231-.09-.321-.21-.311-.46.02-.47.01-.942 0-1.412 0-.21.08-.28.29-.28 2.945 0 5.888 0 8.832.01.11 0 3.386 5.777 3.527 6.017.14.24.17.33.17.33s-.984 1.312-1.366 1.872c-.06.08-.1.18-.1.32.502-.29 1.004-.58 1.507-.88 2.35-1.382 4.712-2.754 7.063-4.135 1.688-.991 3.366-1.982 5.053-2.964.854-.49.543-.53 1.276.09.965.821 1.91 1.662 2.874 2.483.17.15 2.05 1.802 2.23 1.963 2.391 2.102 4.783 4.215 7.174 6.317.422.37.834.771 1.286 1.111.382.28.422.691.532 1.082.201.74.392 1.471.573 2.212.02.09.16.571.241.811.251.801.462 1.622.683 2.423.201.73.392 1.472.593 2.213.13.5.301 1 .402 1.511.08.38.291.561.643.681 1.256.42 2.502.861 3.747 1.292 1.327.46 2.643.9 3.97 1.361.08.03-.453 1.873-.363 1.893v.04z"/><path d="M37.344 20.714c.935-.37 1.87-.73 2.804-1.101.723-.28 1.436-.57 2.16-.851.12-.05.26-.05.392-.05 2.903 0 5.797 0 8.7.01.09 0 .181.02.372.04-.683.43-1.276.82-1.879 1.201l-6.159 3.915a1922.208 1922.208 0 00-4.752 3.003c-.16.1-.251.1-.392-.03a298.71 298.71 0 00-2.793-2.322l-5.023-4.195c-1.96-1.632-3.919-3.274-5.878-4.906-.07-.06-.15-.12-.22-.17-.03.01-.061.03-.091.04.271.82.542 1.652.824 2.523-.241.09-.462.18-.694.26-1.627.56-3.265 1.111-4.892 1.682-.985.34-1.96.7-2.934 1.031-.12.04-.312.05-.392-.01-.693-.56-1.376-1.141-2.09-1.732.623-.44 1.226-.86 1.829-1.281.904-.621 1.818-1.232 2.723-1.863 1.677-1.15 3.355-2.312 5.033-3.474 1.346-.93 2.703-1.852 4.039-2.793.251-.18.412-.19.673.03 1.708 1.442 3.436 2.864 5.154 4.295 1.688 1.402 3.366 2.813 5.054 4.215.21.17.17.27.02.44-.553.672-1.095 1.352-1.638 2.033.02.02.04.04.06.05l-.01.01zM33.537 5.907c-.372.02-.352-.18-.322-.45.161-1.372.653-2.604 1.588-3.625C35.848.69 37.143.08 38.7.01c2.03-.09 3.667.71 4.943 2.242.322.39.563.851.804 1.292.11.2.231.28.462.28 1.316-.01 2.633 0 3.959 0 .401 0 .412.03.341.41-.2 1.202-.994 1.853-2.11 2.093-.803.17-1.647.21-2.481.24-.985.04-1.98 0-2.964 0-.07 0-.15.01-.241.08.864.311 1.728.631 2.632.962-.17 1.562-.884 2.813-2.2 3.654-1.819 1.161-3.768 1.252-5.677.21-1.778-.97-2.964-2.923-2.652-5.556l.02-.01zM8.39 26.32c-.141.08-.222.13-.312.18l-.231-.39s.05-.05.08-.07c.13.08.261.16.462.27v.01z"/><path d="M42.318 17.47s1.869-9.18 9.213-9.18C58.875 8.29 62 17.47 62 17.47H42.318zm9.404-9.78c.81 0 1.467-.655 1.467-1.463 0-.807-.657-1.461-1.467-1.461s-1.467.654-1.467 1.461c0 .808.657 1.462 1.467 1.462zm-30.985.6H3.677v.7h17.06v-.7zm-3.426 6.567H0v.66h17.311v-.66zm-1.336-3.284H4.742v.7h11.233v-.7zm21.028 35.011h-10.81v.66h10.81v-.66zm-3.255-2.973H22.515v.7h11.233v-.7z"/></g><defs><clipPath id="clip0_312_2191"><path fill="#fff" d="M0 0h62v51H0z"/></clipPath></defs></svg>
           <p>Service-ding.de</p>
         </div>
         <div class="header__menu">
@@ -356,7 +95,15 @@
 </header>
 		<main class="page">
 			<section class="hero">
-  <img src="img/hero-bg.png" alt="background" class="hero__background">
+  <picture>
+    <source srcset="img/hero-bg.webp" type="image/webp">
+    
+              <picture>
+                <source srcset="img/hero-bg.webp" type="image/webp">
+                <img src="img/hero-bg.png"  alt="background" class="hero__background" width="4320" height="2055">
+              </picture>
+            
+  </picture>
   <div class="container">
     <div class="hero__content">
       <h1 class="hero__title">Service-Ruf auf Knopfdruck, jetzt einfach wie im Flieger!</h1>
@@ -384,8 +131,13 @@
           </div>
         </div>
         <picture class="hero__image">
-          <source srcset="img/hero-mobile.png" media="(max-width: 930px)">
-          <img src="img/hero.png" alt="product information">
+          <source srcset="img/hero-mobile.webp" media="(max-width: 930px)">
+          
+              <picture>
+                <source srcset="img/hero.webp" type="image/webp">
+                <img src="img/hero.webp"  alt="product information" width="2078" height="1782">
+              </picture>
+            
         </picture>
         <div class="hero__text-wrapper">
           <div class="hero__text-mobile">
@@ -404,16 +156,22 @@
 			<section class="grid-cta">
   <div class="container">
     <h2 class="grid-cta__heading" id="slider">Was ist Service-Ding?</h2>
-    <p class="grid-cta__subtitle">Service-Ding ist ein technisches Produkt, um die Wartezeit auf den Kellner zu verkürzen und somit die Kundenzufiredenheit zu steigern.  Autark, weitestgehend ausfallsicher und einfach ist das System bestehend aus Service-Buttons, Service-Display und Tischnummern.</p>
+    <p class="grid-cta__subtitle">
+      Service-Ding ist ein technisches Produkt, um die Wartezeit auf den Kellner
+      zu verkürzen und somit die Kundenzufiredenheit zu steigern. Autark,
+      weitestgehend ausfallsicher und einfach ist das System bestehend aus
+      Service-Buttons, Service-Display und Tischnummern.
+    </p>
     <div class="grid-cta__content grid-cta__content-one">
       <div class="grid-cta__body">
         <h3 class="grid-cta__title">
-          <b>Einfache Anzeige</b><br>
+          <b>Einfache Anzeige</b><br />
           füreinen schnellen Service!
         </h3>
-        <p class="grid-cta__text">Das einfache und verständliche Display garantiert durch 
-          eine ausfallsichere und bewährte Technik effizienz in 
-          ihrem Servicealltag.</p>
+        <p class="grid-cta__text">
+          Das einfache und verständliche Display garantiert durch eine
+          ausfallsichere und bewährte Technik effizienz in ihrem Servicealltag.
+        </p>
         <ul class="grid-cta__list">
           <li>Einfache und schnelle Inbetriebnahme.</li>
           <li>Funktechnologie mit hoher Reichweite, kein W-Lan notwendig.</li>
@@ -421,21 +179,39 @@
           <li>Verständliches Display, optimiert für den Kellneralltag.</li>
         </ul>
       </div>
-      <img loading="lazy" src="img/cta1.png" width="500" height="500" class="grid-cta__image" alt="image">
+      <picture>
+        <source srcset="img/cta1.webp" type="image/webp">
+        
+              <picture>
+                <source srcset="img/cta1.webp" type="image/webp">
+                <img src="img/cta1.png"  alt="" class="grid-cta__image" width="1922" height="1956">
+              </picture>
+            
+      </picture>
     </div>
     <div class="grid-cta__content grid-cta__content-two">
-      <img loading="lazy" src="img/cta2.png" width="500" height="500" class="grid-cta__image" alt="image">
+      <picture>
+        <source srcset="img/cta2.webp" type="image/webp">
+        
+              <picture>
+                <source srcset="img/cta2.webp" type="image/webp">
+                <img src="img/cta2.png"  alt="" class="grid-cta__image" width="2070" height="1985">
+              </picture>
+            
+      </picture>
       <div class="grid-cta__body">
         <h3 class="grid-cta__title">
           <b>Service-Klingel</b>
-            für die <br> Gastronomie und Cafes!
+          für die <br />
+          Gastronomie und Cafes!
         </h3>
-        <p class="grid-cta__text">Wir haben unsere Klingel auf die Bedürfnisse
-          verschiedene Gastronomien und Cafes abgestimmt. 
-          Haben Sie andere Bedürfnisse? Fragen Sie uns an.</p>
+        <p class="grid-cta__text">
+          Wir haben unsere Klingel auf die Bedürfnisse verschiedene Gastronomien
+          und Cafes abgestimmt. Haben Sie andere Bedürfnisse? Fragen Sie uns an.
+        </p>
         <ul class="grid-cta__list">
           <li>Robustes Design im Qualitätsgehäuse</li>
-          <li>Shisha-Bar und Restraurant-Layout </li>
+          <li>Shisha-Bar und Restraurant-Layout</li>
           <li>Hohe Funk-Reichweise</li>
           <li>Langlebige Batterie, kein Akku!</li>
         </ul>
@@ -444,20 +220,32 @@
     <div class="grid-cta__content grid-cta__content-three">
       <div class="grid-cta__body">
         <h3 class="grid-cta__title">
-          <b>Individuelle Tischnummern</b><br> 
-            mit QR-Code für Ihre Speisekarte
+          <b>Individuelle Tischnummern</b><br />
+          mit QR-Code für Ihre Speisekarte
         </h3>
-        <p class="grid-cta__text">Damit die Kundenzufriedenheit komplett wird bieten wir 
-          erstellen wir Ihnen Tisch-Nummern-Schilder mit <br>
-          Ihren Tischnummern und Ihrer Speisekarte als QR-Code.</p>
-        <p class="grid-cta__text" style="max-width: 423px; margin-top: 30px;">Effortless rentals, personalized shelves—Lidia 
-          transforms book management, enhancing your 
-          reading experience~</p>
+        <p class="grid-cta__text">
+          Damit die Kundenzufriedenheit komplett wird bieten wir erstellen wir
+          Ihnen Tisch-Nummern-Schilder mit <br />
+          Ihren Tischnummern und Ihrer Speisekarte als QR-Code.
+        </p>
+        <p class="grid-cta__text" style="max-width: 423px; margin-top: 30px">
+          Effortless rentals, personalized shelves—Lidia transforms book
+          management, enhancing your reading experience~
+        </p>
       </div>
-      <img loading="lazy" src="img/cta3.png" width="500" height="500" class="grid-cta__image" alt="image">
+      <picture>
+        <source srcset="img/cta3.webp" type="image/webp">
+        
+              <picture>
+                <source srcset="img/cta3.webp" type="image/webp">
+                <img src="img/cta3.png"  alt="" class="grid-cta__image" width="2094" height="1863">
+              </picture>
+            
+      </picture>
     </div>
   </div>
 </section>
+
 			<section class="steps">
   <img loading="lazy" src="img/steps3.png" alt="" class="steps__bg">
   <div class="container">
@@ -469,7 +257,15 @@
     </p>
     <div class="steps__content">
       <div class="steps__item">
-        <img loading="lazy" src="img/item1.png" alt="" width="100" height="100">
+        <picture>
+          <source srcset="img/item1.webp" type="image/webp">
+          
+              <picture>
+                <source srcset="img/item1.webp" type="image/webp">
+                <img src="img/item1.png"  alt="" width="463" height="305">
+              </picture>
+            
+        </picture>           
         <h3>Bestellen</h3>
         <p>
           Wählen Sie Ihre Produkte und geben Sie Ihre Bestellung auf dieser
@@ -539,8 +335,15 @@
         </div>
       </div>
       <div class="steps__item">
-        <img loading="lazy" src="img/item2.png" alt="" width="100" height="100">
-        <h3>Vorkonfiguration</h3>
+        <picture>
+          <source srcset="img/item2.webp" type="image/webp">
+          
+              <picture>
+                <source srcset="img/item2.webp" type="image/webp">
+                <img src="img/item2.png"  alt="" width="592" height="350">
+              </picture>
+            
+        </picture>           <h3>Vorkonfiguration</h3>
         <p>
           Wir richten Ihr System ein und testen es entsprechend vor dem Versand.
         </p>
@@ -608,7 +411,15 @@
         </div>
       </div>
       <div class="steps__item">
-        <img loading="lazy" src="img/item3.png" alt="" width="100" height="100">
+        <picture>
+          <source srcset="img/item3.webp" type="image/webp">
+          
+              <picture>
+                <source srcset="img/item3.webp" type="image/webp">
+                <img src="img/item3.png"  alt="" width="562" height="321">
+              </picture>
+            
+        </picture>           
         <h3>Inbetriebnahme</h3>
         <p>
           Sie erhalten Ihr System als ein vorkonfiguriertes System, das sofort
@@ -678,8 +489,15 @@
         </div>
       </div>
       <div class="steps__item">
-        <img loading="lazy" src="img/item4.png" alt="" width="100" height="100">
-        <h3>Loslegen</h3>
+        <picture>
+          <source srcset="img/item4.webp" type="image/webp">
+          
+              <picture>
+                <source srcset="img/item4.webp" type="image/webp">
+                <img src="img/item4.png"  alt="" width="464" height="265">
+              </picture>
+            
+        </picture>           <h3>Loslegen</h3>
         <p>
           Sie können Ihren Kunden einen verbesserten Service innerhalb eines
           Tages.
@@ -825,8 +643,15 @@
       <div class="swiper _swiper slider__swiper">
         <div class="swiper-wrapper">
           <div class="slider__slide swiper-slide">
-            <img loading="lazy" src="img/slide1.jpg" width="100" height="100" alt>
-            <h3>Starter - Restaurant / Cafe</h3>
+            <picture>
+              <source srcset="img/slide1.webp" type="image/webp">
+              
+              <picture>
+                <source srcset="img/slide1.webp" type="image/webp">
+                <img src="img/slide1.jpg"  alt="" width="768" height="456">
+              </picture>
+            
+            </picture>               <h3>Starter - Restaurant / Cafe</h3>
             <ul class="slider__slide-list">
               <li>1 x Display</li>
               <li>20 x Restaurant Buttons</li>
@@ -836,7 +661,15 @@
             <button class="slider__slide-button">Warenkorb</button>
           </div>
           <div class="slider__slide swiper-slide">
-            <img loading="lazy" src="img/slide2.jpg" width="100" height="100" alt>
+            <picture>
+              <source srcset="img/slide2.webp" type="image/webp">
+              
+              <picture>
+                <source srcset="img/slide2.webp" type="image/webp">
+                <img src="img/slide2.jpg"  alt="" width="768" height="456">
+              </picture>
+            
+            </picture>   
             <h3>Starter - Hookah</h3>
             <ul class="slider__slide-list">
               <li>1 x Display</li>
@@ -847,7 +680,15 @@
             <button class="slider__slide-button">Warenkorb</button>
           </div>
           <div class="slider__slide swiper-slide">
-            <img loading="lazy" src="img/slide3.jpg" width="100" height="100" alt>
+            <picture>
+              <source srcset="img/slide3.webp" type="image/webp">
+              
+              <picture>
+                <source srcset="img/slide3.webp" type="image/webp">
+                <img src="img/slide3.jpg"  alt="" width="768" height="456">
+              </picture>
+            
+            </picture>   
             <h3>Probierpaket - Restaurant / Cafe</h3>
             <ul class="slider__slide-list">
               <li>1 x Display</li>
@@ -858,8 +699,16 @@
             <button class="slider__slide-button">Warenkorb</button>
           </div>
           <div class="slider__slide swiper-slide">
-            <img loading="lazy" src="img/slide3.jpg" width="100" height="100" alt>
-            <h3>Probierpaket - Hookah</h3>
+            <picture>
+              <source srcset="img/slide3.webp" type="image/webp">
+              
+              <picture>
+                <source srcset="img/slide3.webp" type="image/webp">
+                <img src="img/slide3.jpg"  alt="" width="768" height="456">
+              </picture>
+            
+            </picture>   
+                        <h3>Probierpaket - Hookah</h3>
             <ul class="slider__slide-list">
               <li>1 x Display</li>
               <li>3 x Demo Button</li>
@@ -869,7 +718,15 @@
             <button class="slider__slide-button">Warenkorb</button>
           </div>
           <div class="slider__slide swiper-slide">
-            <img loading="lazy" src="img/slide1.jpg" width="100" height="100" alt >
+            <picture>
+              <source srcset="img/slide1.webp" type="image/webp">
+              
+              <picture>
+                <source srcset="img/slide1.webp" type="image/webp">
+                <img src="img/slide1.jpg"  alt="" width="768" height="456">
+              </picture>
+            
+            </picture>   
             <h3>Starter - Restaurant / Cafe</h3>
             <ul class="slider__slide-list">
               <li>1 x Display</li>
@@ -880,7 +737,15 @@
             <button class="slider__slide-button">Warenkorb</button>
           </div>
           <div class="slider__slide swiper-slide">
-            <img loading="lazy" src="img/slide2.jpg" width="100" height="100" alt>
+            <picture>
+              <source srcset="img/slide2.webp" type="image/webp">
+              
+              <picture>
+                <source srcset="img/slide2.webp" type="image/webp">
+                <img src="img/slide2.jpg"  alt="" width="768" height="456">
+              </picture>
+            
+            </picture>               
             <h3>Starter - Hookah</h3>
             <ul class="slider__slide-list">
               <li>1 x Display</li>
@@ -902,7 +767,15 @@
             <button class="slider__slide-button">Warenkorb</button>
           </div>
           <div class="slider__slide swiper-slide">
-            <img loading="lazy" src="img/slide3.jpg" width="100" height="100" alt>
+            <picture>
+              <source srcset="img/slide3.webp" type="image/webp">
+              
+              <picture>
+                <source srcset="img/slide3.webp" type="image/webp">
+                <img src="img/slide3.jpg"  alt="" width="768" height="456">
+              </picture>
+            
+            </picture>            
             <h3>Probierpaket - Hookah</h3>
             <ul class="slider__slide-list">
               <li>1 x Display</li>
@@ -926,7 +799,7 @@
         <h3 class="checkout__products-list-title">Artikelliste</h3>
         <div class="checkout__products-list-wrapper">
           <div class="checkout__product">
-            <img loading="lazy" src="img/product-image.jpg" alt >
+            <img loading="lazy" src="img/product-image.png" alt >
             <div class="checkout__product-content">
               <div class="checkout__product-title">
                 <h4>Product Title come here as bold</h4>
@@ -960,7 +833,7 @@
             </div>
           </div>
           <div class="checkout__product">
-            <img loading="lazy" src="img/product-image.jpg" alt >
+            <img loading="lazy" src="img/product-image.png" alt >
             <div class="checkout__product-content">
               <div class="checkout__product-title">
                 <h4>Product Title come here as bold</h4>
@@ -994,7 +867,7 @@
             </div>
           </div>
           <div class="checkout__product">
-            <img loading="lazy" src="img/product-image.jpg" alt >
+            <img loading="lazy" src="img/product-image.png" alt >
             <div class="checkout__product-content">
               <div class="checkout__product-title">
                 <h4>Product Title come here as bold</h4>
@@ -1028,7 +901,7 @@
             </div>
           </div>
           <div class="checkout__product">
-            <img loading="lazy" src="img/product-image.jpg" alt >
+            <img loading="lazy" src="img/product-image.png" alt >
             <div class="checkout__product-content">
               <div class="checkout__product-title">
                 <h4>Product Title come here as bold</h4>
@@ -1624,74 +1497,96 @@
         <div class="swiper main-slider">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <img
-                loading="lazy"
-                src="img/product-image.jpg"
-                alt="Product 1 Image 1"
-                width="500"
-                height="500"
-              />
+              <picture>
+                <source srcset="img/product-image.webp" type="image/webp">
+                
+              <picture>
+                <source srcset="img/product-image.webp" type="image/webp">
+                <img src="img/product-image.png"  alt="" width="348" height="300">
+              </picture>
+            
+              </picture>
             </div>
             <div class="swiper-slide">
-              <img
-                loading="lazy"
-                src="img/product-image.jpg"
-                alt="Product 1 Image 2"
-              />
+              <picture>
+                <source srcset="img/product-image.webp" type="image/webp">
+                
+              <picture>
+                <source srcset="img/product-image.webp" type="image/webp">
+                <img src="img/product-image.png"  alt="" width="348" height="300">
+              </picture>
+            
+              </picture>
             </div>
             <div class="swiper-slide">
-              <img
-                loading="lazy"
-                src="img/product-image.jpg"
-                alt="Product 1 Image 3"
-              />
+              <picture>
+                <source srcset="img/product-image.webp" type="image/webp">
+                
+              <picture>
+                <source srcset="img/product-image.webp" type="image/webp">
+                <img src="img/product-image.png"  alt="" width="348" height="300">
+              </picture>
+            
+              </picture>
             </div>
             <div class="swiper-slide">
-              <img
-                loading="lazy"
-                src="img/product-image.jpg"
-                alt="Product 1 Image 4"
-              />
+              <picture>
+                <source srcset="img/product-image.webp" type="image/webp">
+                
+              <picture>
+                <source srcset="img/product-image.webp" type="image/webp">
+                <img src="img/product-image.png"  alt="" width="348" height="300">
+              </picture>
+            
+              </picture>
             </div>
           </div>
         </div>
         <div class="swiper thumbs-slider">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <img
-                loading="lazy"
-                src="img/product-image.jpg"
-                alt="Product 1 Image 1"
-                width="200"
-                height="200"
-              />
+              <picture>
+                <source srcset="img/product-image.webp" type="image/webp">
+                
+              <picture>
+                <source srcset="img/product-image.webp" type="image/webp">
+                <img src="img/product-image.png"  alt="" width="348" height="300">
+              </picture>
+            
+              </picture>
             </div>
             <div class="swiper-slide">
-              <img
-                loading="lazy"
-                src="img/product-image.jpg"
-                alt="Product 1 Image 1"
-                width="200"
-                height="200"
-              />
+              <picture>
+                <source srcset="img/product-image.webp" type="image/webp">
+                
+              <picture>
+                <source srcset="img/product-image.webp" type="image/webp">
+                <img src="img/product-image.png"  alt="" width="348" height="300">
+              </picture>
+            
+              </picture>
             </div>
             <div class="swiper-slide">
-              <img
-                loading="lazy"
-                src="img/product-image.jpg"
-                alt="Product 1 Image 1"
-                width="200"
-                height="200"
-              />
+              <picture>
+                <source srcset="img/product-image.webp" type="image/webp">
+                
+              <picture>
+                <source srcset="img/product-image.webp" type="image/webp">
+                <img src="img/product-image.png"  alt="" width="348" height="300">
+              </picture>
+            
+              </picture>
             </div>
             <div class="swiper-slide">
-              <img
-                loading="lazy"
-                src="img/product-image.jpg"
-                alt="Product 1 Image 1"
-                width="200"
-                height="200"
-              />
+              <picture>
+                <source srcset="img/product-image.webp" type="image/webp">
+                
+              <picture>
+                <source srcset="img/product-image.webp" type="image/webp">
+                <img src="img/product-image.png"  alt="" width="348" height="300">
+              </picture>
+            
+              </picture>
             </div>
           </div>
         </div>
@@ -1823,80 +1718,96 @@
         <div class="swiper main-slider">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <img
-                loading="lazy"
-                src="img/product-image.jpg"
-                alt="Product 1 Image 1"
-                width="500"
-                height="500"
-              />
+              <picture>
+                <source srcset="img/product-image.webp" type="image/webp">
+                
+              <picture>
+                <source srcset="img/product-image.webp" type="image/webp">
+                <img src="img/product-image.png"  alt="" width="348" height="300">
+              </picture>
+            
+              </picture>
             </div>
             <div class="swiper-slide">
-              <img
-                loading="lazy"
-                src="img/product-image.jpg"
-                alt="Product 1 Image 1"
-                width="500"
-                height="500"
-              />
+              <picture>
+                <source srcset="img/product-image.webp" type="image/webp">
+                
+              <picture>
+                <source srcset="img/product-image.webp" type="image/webp">
+                <img src="img/product-image.png"  alt="" width="348" height="300">
+              </picture>
+            
+              </picture>
             </div>
             <div class="swiper-slide">
-              <img
-                loading="lazy"
-                src="img/product-image.jpg"
-                alt="Product 1 Image 1"
-                width="500"
-                height="500"
-              />
+              <picture>
+                <source srcset="img/product-image.webp" type="image/webp">
+                
+              <picture>
+                <source srcset="img/product-image.webp" type="image/webp">
+                <img src="img/product-image.png"  alt="" width="348" height="300">
+              </picture>
+            
+              </picture>
             </div>
             <div class="swiper-slide">
-              <img
-                loading="lazy"
-                src="img/product-image.jpg"
-                alt="Product 1 Image 1"
-                width="500"
-                height="500"
-              />
+              <picture>
+                <source srcset="img/product-image.webp" type="image/webp">
+                
+              <picture>
+                <source srcset="img/product-image.webp" type="image/webp">
+                <img src="img/product-image.png"  alt="" width="348" height="300">
+              </picture>
+            
+              </picture>
             </div>
           </div>
         </div>
         <div class="swiper thumbs-slider">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <img
-                loading="lazy"
-                src="img/product-image.jpg"
-                alt="Product 1 Image 1"
-                width="200"
-                height="200"
-              />
+              <picture>
+                <source srcset="img/product-image.webp" type="image/webp">
+                
+              <picture>
+                <source srcset="img/product-image.webp" type="image/webp">
+                <img src="img/product-image.png"  alt="" width="348" height="300">
+              </picture>
+            
+              </picture>
             </div>
             <div class="swiper-slide">
-              <img
-                loading="lazy"
-                src="img/product-image.jpg"
-                alt="Product 1 Image 1"
-                width="200"
-                height="200"
-              />
+              <picture>
+                <source srcset="img/product-image.webp" type="image/webp">
+                
+              <picture>
+                <source srcset="img/product-image.webp" type="image/webp">
+                <img src="img/product-image.png"  alt="" width="348" height="300">
+              </picture>
+            
+              </picture>
             </div>
             <div class="swiper-slide">
-              <img
-                loading="lazy"
-                src="img/product-image.jpg"
-                alt="Product 1 Image 1"
-                width="200"
-                height="200"
-              />
+              <picture>
+                <source srcset="img/product-image.webp" type="image/webp">
+                
+              <picture>
+                <source srcset="img/product-image.webp" type="image/webp">
+                <img src="img/product-image.png"  alt="" width="348" height="300">
+              </picture>
+            
+              </picture>
             </div>
             <div class="swiper-slide">
-              <img
-                loading="lazy"
-                src="img/product-image.jpg"
-                alt="Product 1 Image 1"
-                width="200"
-                height="200"
-              />
+              <picture>
+                <source srcset="img/product-image.webp" type="image/webp">
+                
+              <picture>
+                <source srcset="img/product-image.webp" type="image/webp">
+                <img src="img/product-image.png"  alt="" width="348" height="300">
+              </picture>
+            
+              </picture>
             </div>
           </div>
         </div>
@@ -2028,74 +1939,96 @@
         <div class="swiper main-slider">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <img
-                loading="lazy"
-                src="img/product-image.jpg"
-                alt="Product 1 Image 1"
-                width="500"
-                height="500"
-              />
+              <picture>
+                <source srcset="img/product-image.webp" type="image/webp">
+                
+              <picture>
+                <source srcset="img/product-image.webp" type="image/webp">
+                <img src="img/product-image.png"  alt="" width="348" height="300">
+              </picture>
+            
+              </picture>
             </div>
             <div class="swiper-slide">
-              <img
-                loading="lazy"
-                src="img/product-image.jpg"
-                alt="Product 1 Image 2"
-              />
+              <picture>
+                <source srcset="img/product-image.webp" type="image/webp">
+                
+              <picture>
+                <source srcset="img/product-image.webp" type="image/webp">
+                <img src="img/product-image.png"  alt="" width="348" height="300">
+              </picture>
+            
+              </picture>
             </div>
             <div class="swiper-slide">
-              <img
-                loading="lazy"
-                src="img/product-image.jpg"
-                alt="Product 1 Image 3"
-              />
+              <picture>
+                <source srcset="img/product-image.webp" type="image/webp">
+                
+              <picture>
+                <source srcset="img/product-image.webp" type="image/webp">
+                <img src="img/product-image.png"  alt="" width="348" height="300">
+              </picture>
+            
+              </picture>
             </div>
             <div class="swiper-slide">
-              <img
-                loading="lazy"
-                src="img/product-image.jpg"
-                alt="Product 1 Image 4"
-              />
+              <picture>
+                <source srcset="img/product-image.webp" type="image/webp">
+                
+              <picture>
+                <source srcset="img/product-image.webp" type="image/webp">
+                <img src="img/product-image.png"  alt="" width="348" height="300">
+              </picture>
+            
+              </picture>
             </div>
           </div>
         </div>
         <div class="swiper thumbs-slider">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <img
-                loading="lazy"
-                src="img/product-image.jpg"
-                alt="Product 1 Image 1"
-                width="200"
-                height="200"
-              />
+              <picture>
+                <source srcset="img/product-image.webp" type="image/webp">
+                
+              <picture>
+                <source srcset="img/product-image.webp" type="image/webp">
+                <img src="img/product-image.png"  alt="" width="348" height="300">
+              </picture>
+            
+              </picture>
             </div>
             <div class="swiper-slide">
-              <img
-                loading="lazy"
-                src="img/product-image.jpg"
-                alt="Product 1 Image 1"
-                width="200"
-                height="200"
-              />
+              <picture>
+                <source srcset="img/product-image.webp" type="image/webp">
+                
+              <picture>
+                <source srcset="img/product-image.webp" type="image/webp">
+                <img src="img/product-image.png"  alt="" width="348" height="300">
+              </picture>
+            
+              </picture>
             </div>
             <div class="swiper-slide">
-              <img
-                loading="lazy"
-                src="img/product-image.jpg"
-                alt="Product 1 Image 1"
-                width="200"
-                height="200"
-              />
+              <picture>
+                <source srcset="img/product-image.webp" type="image/webp">
+                
+              <picture>
+                <source srcset="img/product-image.webp" type="image/webp">
+                <img src="img/product-image.png"  alt="" width="348" height="300">
+              </picture>
+            
+              </picture>
             </div>
             <div class="swiper-slide">
-              <img
-                loading="lazy"
-                src="img/product-image.jpg"
-                alt="Product 1 Image 1"
-                width="200"
-                height="200"
-              />
+              <picture>
+                <source srcset="img/product-image.webp" type="image/webp">
+                
+              <picture>
+                <source srcset="img/product-image.webp" type="image/webp">
+                <img src="img/product-image.png"  alt="" width="348" height="300">
+              </picture>
+            
+              </picture>
             </div>
           </div>
         </div>
@@ -2227,74 +2160,96 @@
         <div class="swiper main-slider">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <img
-                loading="lazy"
-                src="img/product-image.jpg"
-                alt="Product 1 Image 1"
-                width="500"
-                height="500"
-              />
+              <picture>
+                <source srcset="img/product-image.webp" type="image/webp">
+                
+              <picture>
+                <source srcset="img/product-image.webp" type="image/webp">
+                <img src="img/product-image.png"  alt="" width="348" height="300">
+              </picture>
+            
+              </picture>
             </div>
             <div class="swiper-slide">
-              <img
-                loading="lazy"
-                src="img/product-image.jpg"
-                alt="Product 1 Image 2"
-              />
+              <picture>
+                <source srcset="img/product-image.webp" type="image/webp">
+                
+              <picture>
+                <source srcset="img/product-image.webp" type="image/webp">
+                <img src="img/product-image.png"  alt="" width="348" height="300">
+              </picture>
+            
+              </picture>
             </div>
             <div class="swiper-slide">
-              <img
-                loading="lazy"
-                src="img/product-image.jpg"
-                alt="Product 1 Image 3"
-              />
+              <picture>
+                <source srcset="img/product-image.webp" type="image/webp">
+                
+              <picture>
+                <source srcset="img/product-image.webp" type="image/webp">
+                <img src="img/product-image.png"  alt="" width="348" height="300">
+              </picture>
+            
+              </picture>
             </div>
             <div class="swiper-slide">
-              <img
-                loading="lazy"
-                src="img/product-image.jpg"
-                alt="Product 1 Image 4"
-              />
+              <picture>
+                <source srcset="img/product-image.webp" type="image/webp">
+                
+              <picture>
+                <source srcset="img/product-image.webp" type="image/webp">
+                <img src="img/product-image.png"  alt="" width="348" height="300">
+              </picture>
+            
+              </picture>
             </div>
           </div>
         </div>
         <div class="swiper thumbs-slider">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <img
-                loading="lazy"
-                src="img/product-image.jpg"
-                alt="Product 1 Image 1"
-                width="200"
-                height="200"
-              />
+              <picture>
+                <source srcset="img/product-image.webp" type="image/webp">
+                
+              <picture>
+                <source srcset="img/product-image.webp" type="image/webp">
+                <img src="img/product-image.png"  alt="" width="348" height="300">
+              </picture>
+            
+              </picture>
             </div>
             <div class="swiper-slide">
-              <img
-                loading="lazy"
-                src="img/product-image.jpg"
-                alt="Product 1 Image 1"
-                width="200"
-                height="200"
-              />
+              <picture>
+                <source srcset="img/product-image.webp" type="image/webp">
+                
+              <picture>
+                <source srcset="img/product-image.webp" type="image/webp">
+                <img src="img/product-image.png"  alt="" width="348" height="300">
+              </picture>
+            
+              </picture>
             </div>
             <div class="swiper-slide">
-              <img
-                loading="lazy"
-                src="img/product-image.jpg"
-                alt="Product 1 Image 1"
-                width="200"
-                height="200"
-              />
+              <picture>
+                <source srcset="img/product-image.webp" type="image/webp">
+                
+              <picture>
+                <source srcset="img/product-image.webp" type="image/webp">
+                <img src="img/product-image.png"  alt="" width="348" height="300">
+              </picture>
+            
+              </picture>
             </div>
             <div class="swiper-slide">
-              <img
-                loading="lazy"
-                src="img/product-image.jpg"
-                alt="Product 1 Image 1"
-                width="200"
-                height="200"
-              />
+              <picture>
+                <source srcset="img/product-image.webp" type="image/webp">
+                
+              <picture>
+                <source srcset="img/product-image.webp" type="image/webp">
+                <img src="img/product-image.png"  alt="" width="348" height="300">
+              </picture>
+            
+              </picture>
             </div>
           </div>
         </div>
@@ -2761,24 +2716,24 @@
 				</a>
 				<div class="footer__socials">
 					<a href="" target="_blank">
-						<img loading="lazy" src="img/inst.svg" alt="">
+						<img loading="lazy" src="img/inst.svg" width="30" height="30" alt="">
 					</a>
 					<a href="" target="_blank">
-						<img loading="lazy" src="img/facebook.svg" alt="">
+						<img loading="lazy" src="img/facebook.svg" width="30" height="30" alt="">
 					</a>
 					<a href="" target="_blank">
-						<img loading="lazy" src="img/in.svg" alt="">
+						<img loading="lazy" src="img/in.svg"  width="30" height="30"  alt="">
 					</a>
 					<a href="" target="_blank">
-						<img loading="lazy" src="img/twitter.svg" alt="">
+						<img loading="lazy" src="img/twitter.svg"  width="30" height="30"  alt="">
 					</a>
 				</div>
 			</div>
     </div>
   </div>
 </footer>
+<script src="js/app.min.js?v=1.0.2" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
-<script src="js/app.min.js?v=1.0.1" defer></script>
 <script src="https://www.paypal.com/sdk/js?client-id=AfS2r59SwjqulsZQaiKV_koVzxvQIRXeGzn2Xb1gyD24ec6ejB1tJHeD1nYbgJr4D7ekBgIBIKOLGCQP&currency=EUR" defer></script>
 </body>
 </html>
