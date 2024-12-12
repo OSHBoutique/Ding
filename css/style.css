@@ -1285,7 +1285,9 @@ body.show-burger:after {
           align-items: center;
 }
 
+.checkout__payment-checkbox span,
 .checkout__payment-checkbox p,
+.checkout__address-checkbox span,
 .checkout__address-checkbox p {
   font-size: 12px;
   font-family: "Roboto", sans-serif;
