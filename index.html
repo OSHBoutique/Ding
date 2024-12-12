@@ -1,42 +1,67 @@
 
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Service-ding.de</title>
-		<meta charset="UTF-8">
-		<meta name="format-detection" content="telephone=no">
-		<link rel="icon" type="image/svg+xml" href="img/fav.svg">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="preload" href="fonts/poppins-regular.ttf" as="font" type="font/ttf"
-			crossorigin="anonymous">
-		<link rel="preload" href="img/hero-bg.png" as="image">
-		<link
-			rel="preload"
-			href="fonts/roboto-regular.ttf"
-			as="font"
-			type="font/ttf"
-			crossorigin="anonymous">
-		<style>
-      .wrapper {
-        width: 100%;
-        min-height: 100%;
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
+  <head>
+    <title>Service-ding.de</title>
+    <meta charset="UTF-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="icon" type="image/svg+xml" href="img/fav.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preload" href="img/hero-bg.webp" as="image" />
+    <link
+      rel="preload"
+      href="fonts/roboto-regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <script>
+      if (window.matchMedia("(max-width: 930px)").matches) {
+        const preload = document.createElement("link");
+        preload.rel = "preload";
+        preload.as = "image";
+        preload.href = "img/hero-mobile.webp";
+        document.head.appendChild(preload);
+      } else {
+        const preload = document.createElement("link");
+        preload.rel = "preload";
+        preload.as = "image";
+        preload.href = "img/hero.webp";
+        document.head.appendChild(preload);
       }
+    </script>
+    <script>
+      (function () {
+        const supportsBrotli =
+          typeof document !== "undefined" && "br" in new TextEncoder();
+        const supportsGzip =
+          typeof document !== "undefined" && "gzip" in new TextEncoder();
 
-      .body {
-        color: #1e1e1e;
-        font-size: 16px;
-      }
-    </style>
-		<link
-			rel="stylesheet"
-			href="css/style.min.css?v=1.0.2"
-			media="print"
-			onload="this.media='all'">
-	</head>
-	<body></body>
+        const scripts = document.querySelectorAll(
+          'script[src], link[rel="stylesheet"][href]'
+        );
+        scripts.forEach((el) => {
+          let url = el.src || el.href;
+          if (supportsBrotli) {
+            url = url.replace(/(\.js|\.css)$/, ".br$1");
+          } else if (supportsGzip) {
+            url = url.replace(/(\.js|\.css)$/, ".gz$1");
+          }
+          if (el.src) {
+            el.src = url;
+          } else if (el.href) {
+            el.href = url;
+          }
+        });
+      })();
+    </script>
+    <link
+      rel="stylesheet"
+      href="css/style.min.css?v=1.0.5"
+      media="print"
+      onload="this.media='all';"
+    />
+  </head>
 </html>
 
 	<div class="wrapper">
@@ -54,7 +79,7 @@
           <a href="#faq" class="header__link anchor">FAQ</a>
         </div>
         <div class="header__buttons">
-          <a href="#checkout" class="button header__button anchor"
+          <a href="#slider" class="button header__button anchor"
           >Bestellen
           <svg
             width="21"
@@ -98,10 +123,7 @@
   <picture>
     <source srcset="img/hero-bg.webp" type="image/webp">
     
-              <picture>
-                <source srcset="img/hero-bg.webp" type="image/webp">
-                <img src="img/hero-bg.png"  alt="background" class="hero__background" width="4320" height="2055">
-              </picture>
+              <img src="img/hero-bg.webp"  alt="background" width="1700" height="800" class="hero__background">
             
   </picture>
   <div class="container">
@@ -133,10 +155,7 @@
         <picture class="hero__image">
           <source srcset="img/hero-mobile.webp" media="(max-width: 930px)">
           
-              <picture>
-                <source srcset="img/hero.webp" type="image/webp">
-                <img src="img/hero.webp"  alt="product information" width="2078" height="1782">
-              </picture>
+              <img src="img/hero.webp"  height="690" width="600"  alt="product information">
             
         </picture>
         <div class="hero__text-wrapper">
@@ -182,10 +201,7 @@
       <picture>
         <source srcset="img/cta1.webp" type="image/webp">
         
-              <picture>
-                <source srcset="img/cta1.webp" type="image/webp">
-                <img src="img/cta1.png"  alt="" class="grid-cta__image" width="1922" height="1956">
-              </picture>
+              <img src="img/cta1.webp"  alt="" loading="lazy" class="grid-cta__image">
             
       </picture>
     </div>
@@ -193,10 +209,7 @@
       <picture>
         <source srcset="img/cta2.webp" type="image/webp">
         
-              <picture>
-                <source srcset="img/cta2.webp" type="image/webp">
-                <img src="img/cta2.png"  alt="" class="grid-cta__image" width="2070" height="1985">
-              </picture>
+              <img src="img/cta2.webp"  alt="" loading="lazy" class="grid-cta__image">
             
       </picture>
       <div class="grid-cta__body">
@@ -236,10 +249,7 @@
       <picture>
         <source srcset="img/cta3.webp" type="image/webp">
         
-              <picture>
-                <source srcset="img/cta3.webp" type="image/webp">
-                <img src="img/cta3.png"  alt="" class="grid-cta__image" width="2094" height="1863">
-              </picture>
+              <img src="img/cta3.webp"  alt="" loading="lazy" class="grid-cta__image">
             
       </picture>
     </div>
@@ -247,7 +257,7 @@
 </section>
 
 			<section class="steps">
-  <img loading="lazy" src="img/steps3.png" alt="" class="steps__bg">
+  <img  loading="lazy" loading="lazy" src="img/steps3.png" alt="" class="steps__bg">
   <div class="container">
     <h2 class="steps__title" id="checkout">Einfache Bestellabwicklung und Installation</h2>
     <p class="steps__subtitle">
@@ -259,12 +269,7 @@
       <div class="steps__item">
         <picture>
           <source srcset="img/item1.webp" type="image/webp">
-          
-              <picture>
-                <source srcset="img/item1.webp" type="image/webp">
-                <img src="img/item1.png"  alt="" width="463" height="305">
-              </picture>
-            
+          <img  loading="lazy" src="img/item1.png" alt="">
         </picture>           
         <h3>Bestellen</h3>
         <p>
@@ -337,12 +342,7 @@
       <div class="steps__item">
         <picture>
           <source srcset="img/item2.webp" type="image/webp">
-          
-              <picture>
-                <source srcset="img/item2.webp" type="image/webp">
-                <img src="img/item2.png"  alt="" width="592" height="350">
-              </picture>
-            
+          <img  loading="lazy" src="img/item2.png" alt="">
         </picture>           <h3>Vorkonfiguration</h3>
         <p>
           Wir richten Ihr System ein und testen es entsprechend vor dem Versand.
@@ -413,12 +413,7 @@
       <div class="steps__item">
         <picture>
           <source srcset="img/item3.webp" type="image/webp">
-          
-              <picture>
-                <source srcset="img/item3.webp" type="image/webp">
-                <img src="img/item3.png"  alt="" width="562" height="321">
-              </picture>
-            
+          <img  loading="lazy" src="img/item3.png" alt="">
         </picture>           
         <h3>Inbetriebnahme</h3>
         <p>
@@ -491,12 +486,7 @@
       <div class="steps__item">
         <picture>
           <source srcset="img/item4.webp" type="image/webp">
-          
-              <picture>
-                <source srcset="img/item4.webp" type="image/webp">
-                <img src="img/item4.png"  alt="" width="464" height="265">
-              </picture>
-            
+          <img  loading="lazy" src="img/item4.png" alt="">
         </picture>           <h3>Loslegen</h3>
         <p>
           Sie können Ihren Kunden einen verbesserten Service innerhalb eines
@@ -520,7 +510,7 @@
     <div class="slider__content">
       <div class="slider__prev">
         <svg
-          width="60"
+          width="60" loading="lazy"
           height="60"
           viewBox="0 0 60 60"
           fill="none"
@@ -645,12 +635,7 @@
           <div class="slider__slide swiper-slide">
             <picture>
               <source srcset="img/slide1.webp" type="image/webp">
-              
-              <picture>
-                <source srcset="img/slide1.webp" type="image/webp">
-                <img src="img/slide1.jpg"  alt="" width="768" height="456">
-              </picture>
-            
+              <img  loading="lazy" src="img/slide1.jpg" alt="">
             </picture>               <h3>Starter - Restaurant / Cafe</h3>
             <ul class="slider__slide-list">
               <li>1 x Display</li>
@@ -663,12 +648,7 @@
           <div class="slider__slide swiper-slide">
             <picture>
               <source srcset="img/slide2.webp" type="image/webp">
-              
-              <picture>
-                <source srcset="img/slide2.webp" type="image/webp">
-                <img src="img/slide2.jpg"  alt="" width="768" height="456">
-              </picture>
-            
+              <img  loading="lazy" src="img/slide2.jpg" alt="">
             </picture>   
             <h3>Starter - Hookah</h3>
             <ul class="slider__slide-list">
@@ -682,12 +662,7 @@
           <div class="slider__slide swiper-slide">
             <picture>
               <source srcset="img/slide3.webp" type="image/webp">
-              
-              <picture>
-                <source srcset="img/slide3.webp" type="image/webp">
-                <img src="img/slide3.jpg"  alt="" width="768" height="456">
-              </picture>
-            
+              <img  loading="lazy" src="img/slide3.jpg" alt="">
             </picture>   
             <h3>Probierpaket - Restaurant / Cafe</h3>
             <ul class="slider__slide-list">
@@ -701,12 +676,7 @@
           <div class="slider__slide swiper-slide">
             <picture>
               <source srcset="img/slide3.webp" type="image/webp">
-              
-              <picture>
-                <source srcset="img/slide3.webp" type="image/webp">
-                <img src="img/slide3.jpg"  alt="" width="768" height="456">
-              </picture>
-            
+              <img  loading="lazy" src="img/slide3.jpg" alt="">
             </picture>   
                         <h3>Probierpaket - Hookah</h3>
             <ul class="slider__slide-list">
@@ -720,12 +690,7 @@
           <div class="slider__slide swiper-slide">
             <picture>
               <source srcset="img/slide1.webp" type="image/webp">
-              
-              <picture>
-                <source srcset="img/slide1.webp" type="image/webp">
-                <img src="img/slide1.jpg"  alt="" width="768" height="456">
-              </picture>
-            
+              <img  loading="lazy" src="img/slide1.jpg" alt="">
             </picture>   
             <h3>Starter - Restaurant / Cafe</h3>
             <ul class="slider__slide-list">
@@ -739,12 +704,7 @@
           <div class="slider__slide swiper-slide">
             <picture>
               <source srcset="img/slide2.webp" type="image/webp">
-              
-              <picture>
-                <source srcset="img/slide2.webp" type="image/webp">
-                <img src="img/slide2.jpg"  alt="" width="768" height="456">
-              </picture>
-            
+              <img  loading="lazy" src="img/slide2.jpg" alt="">
             </picture>               
             <h3>Starter - Hookah</h3>
             <ul class="slider__slide-list">
@@ -756,7 +716,7 @@
             <button class="slider__slide-button">Warenkorb</button>
           </div>
           <div class="slider__slide swiper-slide">
-            <img loading="lazy" src="img/slide3.jpg" width="100" height="100" alt>
+            <img  loading="lazy" loading="lazy" src="img/slide3.jpg" width="100" height="100" alt>
             <h3>Probierpaket - Restaurant / Cafe</h3>
             <ul class="slider__slide-list">
               <li>1 x Display</li>
@@ -769,12 +729,7 @@
           <div class="slider__slide swiper-slide">
             <picture>
               <source srcset="img/slide3.webp" type="image/webp">
-              
-              <picture>
-                <source srcset="img/slide3.webp" type="image/webp">
-                <img src="img/slide3.jpg"  alt="" width="768" height="456">
-              </picture>
-            
+              <img  loading="lazy" src="img/slide3.jpg" alt="">
             </picture>            
             <h3>Probierpaket - Hookah</h3>
             <ul class="slider__slide-list">
@@ -970,65 +925,22 @@
                   <h3>Total Price</h3>
                 </div>
                 <div class="checkout__empty">
-                  <svg
-                    width="84"
-                    height="84"
-                    viewBox="0 0 84 84"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M42 84C65.196 84 84 65.196 84 42C84 18.804 65.196 0 42 0C18.804 0 0 18.804 0 42C0 65.196 18.804 84 42 84Z"
-                      fill="url(#paint0_linear_236_18585)"
-                    >
-                    <path
-                      d="M67.1998 83.9997H16.7998V29.6797C19.1753 29.6771 21.4528 28.7322 23.1325 27.0525C24.8123 25.3727 25.7571 23.0952 25.7598 20.7197H58.2398C58.2373 21.8965 58.4682 23.0621 58.9191 24.149C59.37 25.236 60.032 26.2228 60.8668 27.0522C61.6962 27.8872 62.683 28.5494 63.7701 29.0004C64.8571 29.4515 66.0229 29.6823 67.1998 29.6797V83.9997Z"
-                      fill="white"
-                    >
-                    <path
-                      d="M46 56H32C31.4477 56 31 56.4477 31 57V68C31 68.5523 31.4477 69 32 69H46"
-                      stroke="#C0D0DD"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                    >
-                    <path
-                      d="M46 38H32C31.4477 38 31 38.4477 31 39V50C31 50.5523 31.4477 51 32 51H46"
-                      stroke="#C0D0DD"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                    >
-                    <path
-                      d="M42.056 41.6739C42.2201 41.5099 42.4426 41.4177 42.6746 41.4177C42.9066 41.4177 43.1292 41.5099 43.2932 41.6739L46.3872 44.7679L52.5735 38.5808C52.6547 38.4995 52.7512 38.435 52.8574 38.391C52.9635 38.3469 53.0773 38.3243 53.1922 38.3242C53.3072 38.3242 53.421 38.3468 53.5272 38.3907C53.6334 38.4347 53.7299 38.4991 53.8112 38.5803C53.8925 38.6616 53.957 38.758 54.001 38.8642C54.045 38.9704 54.0677 39.0842 54.0677 39.1991C54.0678 39.314 54.0452 39.4278 54.0012 39.534C53.9573 39.6402 53.8929 39.7367 53.8116 39.818L47.0943 46.5353C46.7038 46.9258 46.0707 46.9258 45.6801 46.5353L42.056 42.9111C41.892 42.7471 41.7998 42.5245 41.7998 42.2925C41.7998 42.0605 41.892 41.838 42.056 41.6739Z"
-                      fill="#C0D0DD"
-                    >
-                    <path
-                      d="M50.0561 66.2274L47.4127 63.7102C47.1918 63.5005 46.9309 63.3376 46.6455 63.2312C46.3601 63.1248 46.0561 63.0772 45.7519 63.0911C45.4476 63.1051 45.1493 63.1803 44.8748 63.3124C44.6004 63.4444 44.3554 63.6305 44.1546 63.8595C43.7857 64.2816 43.5866 64.8255 43.596 65.386C43.6054 65.9465 43.8225 66.4835 44.2053 66.8929L52.8212 76.083C53.3708 76.6674 54.1349 76.9994 54.9368 76.9994H61.6561C65.1361 76.9994 67.4561 74.0994 67.4561 71.1994V58.7715"
-                      stroke="#C0D0DD"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                    <path
-                      d="M67.4566 58.7721C67.4566 55.4574 63.1066 55.4574 63.1066 58.7721V59.6V57.1147C63.1066 53.8 58.7566 53.8 58.7566 57.1147V59.6V55.975C58.7566 52.6603 54.4066 52.6603 54.4066 55.975V59.6V50.1736C54.4066 48.9715 53.4322 48 52.2316 48C51.6548 48 51.1016 48.2292 50.6937 48.637C50.2858 49.0449 50.0566 49.5982 50.0566 50.175V66.228"
-                      stroke="#C0D0DD"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
+                  <svg width="84" height="84" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M42 84C65.196 84 84 65.196 84 42C84 18.804 65.196 0 42 0C18.804 0 0 18.804 0 42C0 65.196 18.804 84 42 84Z" fill="url(#paint0_linear_236_18585)"/>
+                    <path d="M67.1998 83.9997H16.7998V29.6797C19.1753 29.6771 21.4528 28.7322 23.1325 27.0525C24.8123 25.3727 25.7571 23.0952 25.7598 20.7197H58.2398C58.2373 21.8965 58.4682 23.0621 58.9191 24.149C59.37 25.236 60.032 26.2228 60.8668 27.0522C61.6962 27.8872 62.683 28.5494 63.7701 29.0004C64.8571 29.4515 66.0229 29.6823 67.1998 29.6797V83.9997Z" fill="white"/>
+                    <path d="M46 56H32C31.4477 56 31 56.4477 31 57V68C31 68.5523 31.4477 69 32 69H46" stroke="#C0D0DD" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M46 38H32C31.4477 38 31 38.4477 31 39V50C31 50.5523 31.4477 51 32 51H46" stroke="#C0D0DD" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M42.056 41.6739C42.2201 41.5099 42.4426 41.4177 42.6746 41.4177C42.9066 41.4177 43.1292 41.5099 43.2932 41.6739L46.3872 44.7679L52.5735 38.5808C52.6547 38.4995 52.7512 38.435 52.8574 38.391C52.9635 38.3469 53.0773 38.3243 53.1922 38.3242C53.3072 38.3242 53.421 38.3468 53.5272 38.3907C53.6334 38.4347 53.7299 38.4991 53.8112 38.5803C53.8925 38.6616 53.957 38.758 54.001 38.8642C54.045 38.9704 54.0677 39.0842 54.0677 39.1991C54.0678 39.314 54.0452 39.4278 54.0012 39.534C53.9573 39.6402 53.8929 39.7367 53.8116 39.818L47.0943 46.5353C46.7038 46.9258 46.0707 46.9258 45.6801 46.5353L42.056 42.9111C41.892 42.7471 41.7998 42.5245 41.7998 42.2925C41.7998 42.0605 41.892 41.838 42.056 41.6739Z" fill="#C0D0DD"/>
+                    <path d="M50.0561 66.2274L47.4127 63.7102C47.1918 63.5005 46.9309 63.3376 46.6455 63.2312C46.3601 63.1248 46.0561 63.0772 45.7519 63.0911C45.4476 63.1051 45.1493 63.1803 44.8748 63.3124C44.6004 63.4444 44.3554 63.6305 44.1546 63.8595C43.7857 64.2816 43.5866 64.8255 43.596 65.386C43.6054 65.9465 43.8225 66.4835 44.2053 66.8929L52.8212 76.083C53.3708 76.6674 54.1349 76.9994 54.9368 76.9994H61.6561C65.1361 76.9994 67.4561 74.0994 67.4561 71.1994V58.7715" stroke="#C0D0DD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M67.4566 58.7721C67.4566 55.4574 63.1066 55.4574 63.1066 58.7721V59.6V57.1147C63.1066 53.8 58.7566 53.8 58.7566 57.1147V59.6V55.975C58.7566 52.6603 54.4066 52.6603 54.4066 55.975V59.6V50.1736C54.4066 48.9715 53.4322 48 52.2316 48C51.6548 48 51.1016 48.2292 50.6937 48.637C50.2858 49.0449 50.0566 49.5982 50.0566 50.175V66.228" stroke="#C0D0DD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                     <defs>
-                      <lineargradient
-                        id="paint0_linear_236_18585"
-                        x1="42"
-                        y1="0"
-                        x2="42"
-                        y2="84"
-                        gradientUnits="userSpaceOnUse"
-                      >
-                        <stop stop-color="#EDF1F4" >
-                        <stop offset="1" stop-color="#EDF1F4" >
-                      </lineargradient>
+                    <linearGradient id="paint0_linear_236_18585" x1="42" y1="0" x2="42" y2="84" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#EDF1F4"/>
+                    <stop offset="1" stop-color="#EDF1F4"/>
+                    </linearGradient>
                     </defs>
-                  </svg>
+                    </svg>
+                    
                   <p>Ihr Warenkorb ist noch leer.</p>
                 </div>
                 <div class="checkout__line-items"></div>
@@ -1096,7 +1008,7 @@
                     </div>
                     <div class="checkout__input-wrapper">
                       <p>Vorname, Nachname</p>
-                      <input type="text" placeholder="Name Surname" >
+                      <input type="text" name="fullNane" placeholder="Name Surname" >
                     </div>
                   </div>
                   <div class="checkout__form-row">
@@ -1149,7 +1061,6 @@
                           >
                         </svg>
                         <select name="country" placeholder="Country">
-                          <option selected disabled>Country</option>
                           <option value="Albania">Albania</option>
                           <option value="Andorra">Andorra</option>
                           <option value="Armenia">Armenia</option>
@@ -1169,7 +1080,7 @@
                           <option value="Finland">Finland</option>
                           <option value="France">France</option>
                           <option value="Georgia">Georgia</option>
-                          <option value="Germany">Germany</option>
+                          <option value="Germany" selected>Germany</option>
                           <option value="Greece">Greece</option>
                           <option value="Hungary">Hungary</option>
                           <option value="Iceland">Iceland</option>
@@ -1218,7 +1129,7 @@
                     </div>
                     <div class="checkout__input-wrapper">
                       <p>Vorname, Nachname</p>
-                      <input type="text" placeholder="Name Surname" >
+                      <input type="text" name="fullNane" placeholder="Name Surname" >
                     </div>
                   </div>
                   <div class="checkout__form-row">
@@ -1291,7 +1202,7 @@
                           <option value="Finland">Finland</option>
                           <option value="France">France</option>
                           <option value="Georgia">Georgia</option>
-                          <option value="Germany">Germany</option>
+                          <option value="Germany" selected>Germany</option>
                           <option value="Greece">Greece</option>
                           <option value="Hungary">Hungary</option>
                           <option value="Iceland">Iceland</option>
@@ -1499,45 +1410,25 @@
             <div class="swiper-slide">
               <picture>
                 <source srcset="img/product-image.webp" type="image/webp">
-                
-              <picture>
-                <source srcset="img/product-image.webp" type="image/webp">
-                <img src="img/product-image.png"  alt="" width="348" height="300">
-              </picture>
-            
+                <img  loading="lazy" src="img/product-image.png" alt="">
               </picture>
             </div>
             <div class="swiper-slide">
               <picture>
                 <source srcset="img/product-image.webp" type="image/webp">
-                
-              <picture>
-                <source srcset="img/product-image.webp" type="image/webp">
-                <img src="img/product-image.png"  alt="" width="348" height="300">
-              </picture>
-            
+                <img  loading="lazy" src="img/product-image.png" alt="">
               </picture>
             </div>
             <div class="swiper-slide">
               <picture>
                 <source srcset="img/product-image.webp" type="image/webp">
-                
-              <picture>
-                <source srcset="img/product-image.webp" type="image/webp">
-                <img src="img/product-image.png"  alt="" width="348" height="300">
-              </picture>
-            
+                <img  loading="lazy" src="img/product-image.png" alt="">
               </picture>
             </div>
             <div class="swiper-slide">
               <picture>
                 <source srcset="img/product-image.webp" type="image/webp">
-                
-              <picture>
-                <source srcset="img/product-image.webp" type="image/webp">
-                <img src="img/product-image.png"  alt="" width="348" height="300">
-              </picture>
-            
+                <img  loading="lazy" src="img/product-image.png" alt="">
               </picture>
             </div>
           </div>
@@ -1547,45 +1438,25 @@
             <div class="swiper-slide">
               <picture>
                 <source srcset="img/product-image.webp" type="image/webp">
-                
-              <picture>
-                <source srcset="img/product-image.webp" type="image/webp">
-                <img src="img/product-image.png"  alt="" width="348" height="300">
-              </picture>
-            
+                <img  loading="lazy" src="img/product-image.png" alt="">
               </picture>
             </div>
             <div class="swiper-slide">
               <picture>
                 <source srcset="img/product-image.webp" type="image/webp">
-                
-              <picture>
-                <source srcset="img/product-image.webp" type="image/webp">
-                <img src="img/product-image.png"  alt="" width="348" height="300">
-              </picture>
-            
+                <img  loading="lazy" src="img/product-image.png" alt="">
               </picture>
             </div>
             <div class="swiper-slide">
               <picture>
                 <source srcset="img/product-image.webp" type="image/webp">
-                
-              <picture>
-                <source srcset="img/product-image.webp" type="image/webp">
-                <img src="img/product-image.png"  alt="" width="348" height="300">
-              </picture>
-            
+                <img  loading="lazy" src="img/product-image.png" alt="">
               </picture>
             </div>
             <div class="swiper-slide">
               <picture>
                 <source srcset="img/product-image.webp" type="image/webp">
-                
-              <picture>
-                <source srcset="img/product-image.webp" type="image/webp">
-                <img src="img/product-image.png"  alt="" width="348" height="300">
-              </picture>
-            
+                <img  loading="lazy" src="img/product-image.png" alt="">
               </picture>
             </div>
           </div>
@@ -1720,45 +1591,25 @@
             <div class="swiper-slide">
               <picture>
                 <source srcset="img/product-image.webp" type="image/webp">
-                
-              <picture>
-                <source srcset="img/product-image.webp" type="image/webp">
-                <img src="img/product-image.png"  alt="" width="348" height="300">
-              </picture>
-            
+                <img  loading="lazy" src="img/product-image.png" alt="">
               </picture>
             </div>
             <div class="swiper-slide">
               <picture>
                 <source srcset="img/product-image.webp" type="image/webp">
-                
-              <picture>
-                <source srcset="img/product-image.webp" type="image/webp">
-                <img src="img/product-image.png"  alt="" width="348" height="300">
-              </picture>
-            
+                <img  loading="lazy" src="img/product-image.png" alt="">
               </picture>
             </div>
             <div class="swiper-slide">
               <picture>
                 <source srcset="img/product-image.webp" type="image/webp">
-                
-              <picture>
-                <source srcset="img/product-image.webp" type="image/webp">
-                <img src="img/product-image.png"  alt="" width="348" height="300">
-              </picture>
-            
+                <img  loading="lazy" src="img/product-image.png" alt="">
               </picture>
             </div>
             <div class="swiper-slide">
               <picture>
                 <source srcset="img/product-image.webp" type="image/webp">
-                
-              <picture>
-                <source srcset="img/product-image.webp" type="image/webp">
-                <img src="img/product-image.png"  alt="" width="348" height="300">
-              </picture>
-            
+                <img  loading="lazy" src="img/product-image.png" alt="">
               </picture>
             </div>
           </div>
@@ -1768,45 +1619,25 @@
             <div class="swiper-slide">
               <picture>
                 <source srcset="img/product-image.webp" type="image/webp">
-                
-              <picture>
-                <source srcset="img/product-image.webp" type="image/webp">
-                <img src="img/product-image.png"  alt="" width="348" height="300">
-              </picture>
-            
+                <img  loading="lazy" src="img/product-image.png" alt="">
               </picture>
             </div>
             <div class="swiper-slide">
               <picture>
                 <source srcset="img/product-image.webp" type="image/webp">
-                
-              <picture>
-                <source srcset="img/product-image.webp" type="image/webp">
-                <img src="img/product-image.png"  alt="" width="348" height="300">
-              </picture>
-            
+                <img  loading="lazy" src="img/product-image.png" alt="">
               </picture>
             </div>
             <div class="swiper-slide">
               <picture>
                 <source srcset="img/product-image.webp" type="image/webp">
-                
-              <picture>
-                <source srcset="img/product-image.webp" type="image/webp">
-                <img src="img/product-image.png"  alt="" width="348" height="300">
-              </picture>
-            
+                <img  loading="lazy" src="img/product-image.png" alt="">
               </picture>
             </div>
             <div class="swiper-slide">
               <picture>
                 <source srcset="img/product-image.webp" type="image/webp">
-                
-              <picture>
-                <source srcset="img/product-image.webp" type="image/webp">
-                <img src="img/product-image.png"  alt="" width="348" height="300">
-              </picture>
-            
+                <img  loading="lazy" src="img/product-image.png" alt="">
               </picture>
             </div>
           </div>
@@ -1941,45 +1772,25 @@
             <div class="swiper-slide">
               <picture>
                 <source srcset="img/product-image.webp" type="image/webp">
-                
-              <picture>
-                <source srcset="img/product-image.webp" type="image/webp">
-                <img src="img/product-image.png"  alt="" width="348" height="300">
-              </picture>
-            
+                <img  loading="lazy" src="img/product-image.png" alt="">
               </picture>
             </div>
             <div class="swiper-slide">
               <picture>
                 <source srcset="img/product-image.webp" type="image/webp">
-                
-              <picture>
-                <source srcset="img/product-image.webp" type="image/webp">
-                <img src="img/product-image.png"  alt="" width="348" height="300">
-              </picture>
-            
+                <img  loading="lazy" src="img/product-image.png" alt="">
               </picture>
             </div>
             <div class="swiper-slide">
               <picture>
                 <source srcset="img/product-image.webp" type="image/webp">
-                
-              <picture>
-                <source srcset="img/product-image.webp" type="image/webp">
-                <img src="img/product-image.png"  alt="" width="348" height="300">
-              </picture>
-            
+                <img  loading="lazy" src="img/product-image.png" alt="">
               </picture>
             </div>
             <div class="swiper-slide">
               <picture>
                 <source srcset="img/product-image.webp" type="image/webp">
-                
-              <picture>
-                <source srcset="img/product-image.webp" type="image/webp">
-                <img src="img/product-image.png"  alt="" width="348" height="300">
-              </picture>
-            
+                <img  loading="lazy" src="img/product-image.png" alt="">
               </picture>
             </div>
           </div>
@@ -1989,45 +1800,25 @@
             <div class="swiper-slide">
               <picture>
                 <source srcset="img/product-image.webp" type="image/webp">
-                
-              <picture>
-                <source srcset="img/product-image.webp" type="image/webp">
-                <img src="img/product-image.png"  alt="" width="348" height="300">
-              </picture>
-            
+                <img  loading="lazy" src="img/product-image.png" alt="">
               </picture>
             </div>
             <div class="swiper-slide">
               <picture>
                 <source srcset="img/product-image.webp" type="image/webp">
-                
-              <picture>
-                <source srcset="img/product-image.webp" type="image/webp">
-                <img src="img/product-image.png"  alt="" width="348" height="300">
-              </picture>
-            
+                <img  loading="lazy" src="img/product-image.png" alt="">
               </picture>
             </div>
             <div class="swiper-slide">
               <picture>
                 <source srcset="img/product-image.webp" type="image/webp">
-                
-              <picture>
-                <source srcset="img/product-image.webp" type="image/webp">
-                <img src="img/product-image.png"  alt="" width="348" height="300">
-              </picture>
-            
+                <img  loading="lazy" src="img/product-image.png" alt="">
               </picture>
             </div>
             <div class="swiper-slide">
               <picture>
                 <source srcset="img/product-image.webp" type="image/webp">
-                
-              <picture>
-                <source srcset="img/product-image.webp" type="image/webp">
-                <img src="img/product-image.png"  alt="" width="348" height="300">
-              </picture>
-            
+                <img  loading="lazy" src="img/product-image.png" alt="">
               </picture>
             </div>
           </div>
@@ -2162,45 +1953,25 @@
             <div class="swiper-slide">
               <picture>
                 <source srcset="img/product-image.webp" type="image/webp">
-                
-              <picture>
-                <source srcset="img/product-image.webp" type="image/webp">
-                <img src="img/product-image.png"  alt="" width="348" height="300">
-              </picture>
-            
+                <img  loading="lazy" src="img/product-image.png" alt="">
               </picture>
             </div>
             <div class="swiper-slide">
               <picture>
                 <source srcset="img/product-image.webp" type="image/webp">
-                
-              <picture>
-                <source srcset="img/product-image.webp" type="image/webp">
-                <img src="img/product-image.png"  alt="" width="348" height="300">
-              </picture>
-            
+                <img  loading="lazy" src="img/product-image.png" alt="">
               </picture>
             </div>
             <div class="swiper-slide">
               <picture>
                 <source srcset="img/product-image.webp" type="image/webp">
-                
-              <picture>
-                <source srcset="img/product-image.webp" type="image/webp">
-                <img src="img/product-image.png"  alt="" width="348" height="300">
-              </picture>
-            
+                <img  loading="lazy" src="img/product-image.png" alt="">
               </picture>
             </div>
             <div class="swiper-slide">
               <picture>
                 <source srcset="img/product-image.webp" type="image/webp">
-                
-              <picture>
-                <source srcset="img/product-image.webp" type="image/webp">
-                <img src="img/product-image.png"  alt="" width="348" height="300">
-              </picture>
-            
+                <img  loading="lazy" src="img/product-image.png" alt="">
               </picture>
             </div>
           </div>
@@ -2210,45 +1981,25 @@
             <div class="swiper-slide">
               <picture>
                 <source srcset="img/product-image.webp" type="image/webp">
-                
-              <picture>
-                <source srcset="img/product-image.webp" type="image/webp">
-                <img src="img/product-image.png"  alt="" width="348" height="300">
-              </picture>
-            
+                <img  loading="lazy" src="img/product-image.png" alt="">
               </picture>
             </div>
             <div class="swiper-slide">
               <picture>
                 <source srcset="img/product-image.webp" type="image/webp">
-                
-              <picture>
-                <source srcset="img/product-image.webp" type="image/webp">
-                <img src="img/product-image.png"  alt="" width="348" height="300">
-              </picture>
-            
+                <img  loading="lazy" src="img/product-image.png" alt="">
               </picture>
             </div>
             <div class="swiper-slide">
               <picture>
                 <source srcset="img/product-image.webp" type="image/webp">
-                
-              <picture>
-                <source srcset="img/product-image.webp" type="image/webp">
-                <img src="img/product-image.png"  alt="" width="348" height="300">
-              </picture>
-            
+                <img  loading="lazy" src="img/product-image.png" alt="">
               </picture>
             </div>
             <div class="swiper-slide">
               <picture>
                 <source srcset="img/product-image.webp" type="image/webp">
-                
-              <picture>
-                <source srcset="img/product-image.webp" type="image/webp">
-                <img src="img/product-image.png"  alt="" width="348" height="300">
-              </picture>
-            
+                <img  loading="lazy" src="img/product-image.png" alt="">
               </picture>
             </div>
           </div>
@@ -2676,65 +2427,65 @@
 </div>
 
 		</main>
-		<footer class="footer">
-  <div class="container footer__container">
-		<img loading="lazy" src="img/footer-bg.svg" alt="" class="footer__bg">
-    <div class="footer__content">
-      <div class="footer__info">
-        <div class="footer__logo">
-          <img loading="lazy" src="img/white-logo.svg" alt="" />
-					<p>Service-ding.de</p>
-        </div>
-        <div class="footer__address">
-          <p>Address: Kore Şehitleri Street. No: 32 Apartment: 7</p>
-          <p>Zincirlikuyu 34394 Istanbul, Turkey</p>
-          <p>Phone: + (90) (212) 274 70 00</p>
-        </div>
-      </div>
-			<div class="footer__links">
-				<a href="#grid-cta" class="anchor">Produkt</a>
-				<a href="#steps" class="anchor">Bestellablauf</a>
-				<a href="#faq" class="anchor">FAQ</a>
-			</div>
-			<div class="footer__buttons">
-				<a href="#checkout" class="footer__button anchor">
-					Buy Now
-					<svg
-						width="21"
-						height="21"
-						viewBox="0 0 21 21"
-						fill="none"
-						xmlns="http://www.w3.org/2000/svg"
-					>
-						<path
-							fill-rule="evenodd"
-							clip-rule="evenodd"
-							d="M12.6213 10.2038H15.3891C15.8088 10.2038 16.1386 9.85685 16.1386 9.43844C16.1386 9.00983 15.8088 8.67306 15.3891 8.67306H12.6213C12.2016 8.67306 11.8719 9.00983 11.8719 9.43844C11.8719 9.85685 12.2016 10.2038 12.6213 10.2038ZM18.6766 4.8982C19.2861 4.8982 19.6858 5.1125 20.0855 5.58194C20.4852 6.05137 20.5551 6.72491 20.4652 7.33619L19.5159 14.0307C19.3361 15.3176 18.2569 16.2656 16.9879 16.2656H6.08639C4.75742 16.2656 3.65828 15.2257 3.54837 13.8787L2.62908 2.75411L1.12026 2.48877C0.72057 2.41734 0.440788 2.01934 0.510734 1.61114C0.580679 1.19375 0.970376 0.91719 1.38006 0.979441L3.7632 1.3458C4.10293 1.40806 4.35274 1.69278 4.38272 2.03975L4.57257 4.32569C4.60254 4.65327 4.86234 4.8982 5.18209 4.8982H18.6766ZM5.92631 17.8786C5.08697 17.8786 4.4075 18.5725 4.4075 19.4297C4.4075 20.2768 5.08697 20.9707 5.92631 20.9707C6.75567 20.9707 7.43514 20.2768 7.43514 19.4297C7.43514 18.5725 6.75567 17.8786 5.92631 17.8786ZM17.1676 17.8786C16.3282 17.8786 15.6487 18.5725 15.6487 19.4297C15.6487 20.2768 16.3282 20.9707 17.1676 20.9707C17.9969 20.9707 18.6764 20.2768 18.6764 19.4297C18.6764 18.5725 17.9969 17.8786 17.1676 17.8786Z"
-							fill="white"
-						>
-					</svg>
-				</a>
-				<div class="footer__socials">
-					<a href="" target="_blank">
-						<img loading="lazy" src="img/inst.svg" width="30" height="30" alt="">
-					</a>
-					<a href="" target="_blank">
-						<img loading="lazy" src="img/facebook.svg" width="30" height="30" alt="">
-					</a>
-					<a href="" target="_blank">
-						<img loading="lazy" src="img/in.svg"  width="30" height="30"  alt="">
-					</a>
-					<a href="" target="_blank">
-						<img loading="lazy" src="img/twitter.svg"  width="30" height="30"  alt="">
-					</a>
+				<footer class="footer">
+			<div class="container footer__container">
+				<img loading="lazy" src="img/footer-bg.svg" alt="" class="footer__bg">
+				<div class="footer__content">
+					<div class="footer__info">
+						<div class="footer__logo">
+							<img loading="lazy" src="img/white-logo.svg" alt="" />
+							<p>Service-ding.de</p>
+						</div>
+						<div class="footer__address">
+							<p>Address: Kore Şehitleri Street. No: 32 Apartment: 7</p>
+							<p>Zincirlikuyu 34394 Istanbul, Turkey</p>
+							<p>Phone: + (90) (212) 274 70 00</p>
+						</div>
+					</div>
+					<div class="footer__links">
+						<a href="#grid-cta" class="anchor">Produkt</a>
+						<a href="#steps" class="anchor">Bestellablauf</a>
+						<a href="#faq" class="anchor">FAQ</a>
+					</div>
+					<div class="footer__buttons">
+						<a href="#checkout" class="footer__button anchor">
+							Buy Now
+							<svg
+								width="21"
+								height="21"
+								viewBox="0 0 21 21"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<path
+									fill-rule="evenodd"
+									clip-rule="evenodd"
+									d="M12.6213 10.2038H15.3891C15.8088 10.2038 16.1386 9.85685 16.1386 9.43844C16.1386 9.00983 15.8088 8.67306 15.3891 8.67306H12.6213C12.2016 8.67306 11.8719 9.00983 11.8719 9.43844C11.8719 9.85685 12.2016 10.2038 12.6213 10.2038ZM18.6766 4.8982C19.2861 4.8982 19.6858 5.1125 20.0855 5.58194C20.4852 6.05137 20.5551 6.72491 20.4652 7.33619L19.5159 14.0307C19.3361 15.3176 18.2569 16.2656 16.9879 16.2656H6.08639C4.75742 16.2656 3.65828 15.2257 3.54837 13.8787L2.62908 2.75411L1.12026 2.48877C0.72057 2.41734 0.440788 2.01934 0.510734 1.61114C0.580679 1.19375 0.970376 0.91719 1.38006 0.979441L3.7632 1.3458C4.10293 1.40806 4.35274 1.69278 4.38272 2.03975L4.57257 4.32569C4.60254 4.65327 4.86234 4.8982 5.18209 4.8982H18.6766ZM5.92631 17.8786C5.08697 17.8786 4.4075 18.5725 4.4075 19.4297C4.4075 20.2768 5.08697 20.9707 5.92631 20.9707C6.75567 20.9707 7.43514 20.2768 7.43514 19.4297C7.43514 18.5725 6.75567 17.8786 5.92631 17.8786ZM17.1676 17.8786C16.3282 17.8786 15.6487 18.5725 15.6487 19.4297C15.6487 20.2768 16.3282 20.9707 17.1676 20.9707C17.9969 20.9707 18.6764 20.2768 18.6764 19.4297C18.6764 18.5725 17.9969 17.8786 17.1676 17.8786Z"
+									fill="white"
+								>
+							</svg>
+						</a>
+						<div class="footer__socials">
+							<a href="" target="_blank">
+								<img loading="lazy" src="img/inst.svg" width="30" height="30" alt="">
+							</a>
+							<a href="" target="_blank">
+								<img loading="lazy" src="img/facebook.svg" width="30" height="30" alt="">
+							</a>
+							<a href="" target="_blank">
+								<img loading="lazy" src="img/in.svg"  width="30" height="30"  alt="">
+							</a>
+							<a href="" target="_blank">
+								<img loading="lazy" src="img/twitter.svg"  width="30" height="30"  alt="">
+							</a>
+						</div>
+					</div>
 				</div>
 			</div>
-    </div>
-  </div>
-</footer>
-<script src="js/app.min.js?v=1.0.2" defer></script>
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
-<script src="https://www.paypal.com/sdk/js?client-id=AfS2r59SwjqulsZQaiKV_koVzxvQIRXeGzn2Xb1gyD24ec6ejB1tJHeD1nYbgJr4D7ekBgIBIKOLGCQP&currency=EUR" defer></script>
-</body>
+		</footer>
+		<script src="js/app.min.js?v=1.0.5" defer></script>
+		<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+		<script src="https://www.paypal.com/sdk/js?client-id=AfS2r59SwjqulsZQaiKV_koVzxvQIRXeGzn2Xb1gyD24ec6ejB1tJHeD1nYbgJr4D7ekBgIBIKOLGCQP&currency=EUR" defer></script>
+	</body>
 </html>
 	</div>

@@ -255,18 +255,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function checkInputs(inputs, selects) {
     const areInputsFilled = Array.from(inputs).every((input) => {
-      if (input.name === "additionalLine") {
+      if (input.name === "additionalLine" || input.name === "fullNane") {
         return true;
       }
       return input.value.trim() !== "";
     });
-
+  
     const areSelectsFilled = Array.from(selects).every(
       (select) => select.value.trim() !== ""
     );
-
+  
     return areInputsFilled && areSelectsFilled;
   }
+  
 
   function updateSaveButtonState() {
     const isMainAddressFilled = checkInputs(mainAddressInputs, mainAddressSelects);

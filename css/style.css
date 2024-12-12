@@ -1,27 +1,14 @@
 @font-face {
   font-family: "Poppins";
-  src: url("../fonts/poppins-regular.ttf") format("truetype");
+  src: url("../fonts/poppins-regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Poppins";
-  src: url("../fonts/poppins-semibold.ttf") format("truetype");
-  font-weight: 600;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Poppins";
-  src: url("../fonts/poppins-bold.ttf") format("truetype");
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Poppins";
-  src: url("../fonts/poppins-medium.ttf") format("truetype");
+  src: url("../fonts/poppins-medium.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -45,15 +32,7 @@
 
 @font-face {
   font-family: "Roboto";
-  src: url("../fonts/roboto-black.ttf") format("truetype");
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Roboto";
-  src: url("../fonts/roboto-medium.ttf") format("truetype");
+  src: url("../fonts/roboto-medium.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -61,14 +40,15 @@
 
 @font-face {
   font-family: "Roboto";
-  src: url("../fonts/roboto-bold.ttf") format("truetype");
+  src: url("../fonts/roboto-bold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Roboto";
-  src: url("../fonts/roboto-regular.ttf") format("truetype");
+  src: url("../fonts/roboto-regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -314,10 +294,28 @@ h6 {
   -webkit-transform: translateX(0);
       -ms-transform: translateX(0);
           transform: translateX(0);
+  visibility: visible;
 }
 
 .header__white .header__logo svg path {
   fill: black;
+}
+
+.wrapper {
+  width: 100%;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.body {
+  color: #1e1e1e;
+  font-size: 16px;
 }
 
 body {
@@ -601,7 +599,6 @@ body.show-burger:after {
   padding-bottom: 95px;
   max-width: 1600px;
   overflow-x: hidden;
-  min-height: 100dvh;
   margin-right: auto;
   margin-left: auto;
   background-color: #F0F0F0;
@@ -754,6 +751,7 @@ body.show-burger:after {
   top: 80px;
   max-width: 690px;
   width: 100%;
+  min-height: 327px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -796,7 +794,16 @@ body.show-burger:after {
       -ms-flex-align: center;
           align-items: center;
   grid-template-columns: auto 1fr;
-  gap: 10px;
+  gap: 30px;
+}
+
+.grid-cta__content picture {
+  padding: 20px;
+}
+
+.grid-cta__content picture,
+.grid-cta__content img {
+  width: 100%;
 }
 
 .grid-cta__content-three {
@@ -1922,7 +1929,7 @@ body.show-burger:after {
   font-family: "Roboto", sans-serif;
   line-height: 200%;
   text-align: center;
-  font-weight: 900;
+  font-weight: 700;
   padding: 0 20px;
 }
 
@@ -3553,6 +3560,10 @@ button.swiper-pagination-bullet {
     max-width: 700px;
   }
 
+  .grid-cta__content picture {
+    padding: 0;
+  }
+
   .grid-cta__content {
     margin-top: 50px;
   }
@@ -3725,6 +3736,7 @@ button.swiper-pagination-bullet {
             transform: translateX(100%);
     position: fixed;
     right: 0;
+    visibility: hidden;
     height: 100%;
     width: 400px;
     -webkit-transition: 0.5s ease all;
